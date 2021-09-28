@@ -2,8 +2,10 @@ html, body {
     scroll-behavior: smooth;
 }
 body{
-    font-family: 'Raleway', sans-serif;
     background-color: #d9dee0;
+    font-family: 'Raleway', sans-serif;
+}
+main{
     display: grid;
     grid-template-areas: 
     "container container"
@@ -14,8 +16,8 @@ body{
     "footer    footer";
     grid-template-columns: 50% 50%;
 }
-#container{
-    background-image:url(srodek3.jpg);
+header{
+    background-image:url(saunainside.jpg);
     width:100%;
     height:1000px;
     background-size: 100%;
@@ -28,13 +30,14 @@ body{
     grid-template-areas: "nav .";
     grid-area: container;
 }
-#logo img{
-    height:200px;
+#logo{
     position:absolute;
     top:30px;
     right:30px;
-    /* grid-area: logo; */
 } 
+#logo img{
+    height:200px;
+}
 nav{
     display: flex;
     flex-direction: column;
@@ -67,7 +70,7 @@ nav a:hover{
 #obraz img{
     width:100%; 
 }
-article{
+#nordicspa{
     grid-area: article;
     text-align:justify;
     padding:50px 100px 50px 50px;
@@ -76,7 +79,7 @@ article{
     align-items: center;
     font-size:1.4em;
 }
-article h1{
+#nordicspa h1{
     text-transform: uppercase;
     text-align: center;
     border-bottom: 2px solid #5d7c84;
@@ -90,13 +93,13 @@ article h1{
     grid-template-columns: 50% 50%;
     color: #422e28;
 }
-#gallery div img{
+#gallery img{
     width:100%;
     float:left;
 }
 .info{
     background-color:#d9dee0;
-    font-size: 1.5em;
+    font-size: 1.4em;
     display: flex;
     align-items:center;
     position:relative;
@@ -116,19 +119,19 @@ article h1{
 }
 
 
-#ritual{
+#rytual{
     grid-area: rytual;
     display:flex;
     justify-content: space-around;
 }
-#ritual img{
+#rytual img{
     width:40%;
     margin:100px;
 }
-#ritual ul{
-    margin:100px;
+#rytual ul{
+    margin:20px;
     align-self:center;
-    font-size:1.6em;
+    font-size:1.3em;
     color:#5d7c84;
     line-height: 150%;
     font-weight: 600;
@@ -213,6 +216,27 @@ article h1{
     text-decoration: none;
 }
 
+#reservation_button{
+    font-size:1em;
+    width:120px;
+    padding:10px 0;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    background-color:rgba(0, 0, 0, 0.7);
+    border:2px solid rgba(161, 111, 90, 0.8);
+    text-align: center;
+}
+#reservation_button a{
+    text-decoration: none;
+    color:#d9dee0;
+    text-transform: uppercase;
+}
+#reservation_button:hover{
+    background-color:rgba(161, 111, 90, 0.5); 
+}
+
+
 
 footer{
     grid-area: footer;
@@ -221,14 +245,14 @@ footer{
 }
 
 @media only screen and (max-width:409px) {
-    body{
+    main{
         font-size:12px;
     }
 }
 
 /* Extra small devices (phones, 600px and down) */
  @media only screen and (max-width: 600px){ 
-    body{
+    main{
         grid-template-areas: 
         "container"
         "article"
@@ -238,27 +262,32 @@ footer{
         "kontakt"
         "footer";
         grid-template-columns: 100%;
+        font-size:13px;
     }
-    #container{
+    header{
         background-size: 1200px;
         height:100%;
         background-position-y: -70px;
         grid-template-columns: 100%;
         grid-template-areas: "nav";
     }
+    #logo{
+        text-align:center;
+        right:0px;
+        width:100%;
+        height:auto;
+    }
     #logo img{
-        height:150px;
+        height:100px;
         filter: brightness(600%);
-        top:15px;
-        right:15px;
-    } 
+    }
     nav{
         padding:150px 0 50px 0;
     }
     #obraz{
         display:none;
     }
-    article{
+    #nordicspa{
         padding:20px 40px;
     }
 
@@ -306,15 +335,15 @@ footer{
         font-size:3em;
     }
 
-    #ritual{
+    #rytual{
         flex-wrap: wrap;
     }
-    #ritual img{
+    #rytual img{
         width:100%;
         margin:0;
         padding:20px 10px;
     }
-    #ritual ul{
+    #rytual ul{
         margin:20px 10px;
         font-size:1.4em;
     }
@@ -347,7 +376,7 @@ footer{
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width:1199px)  {
-    body{
+    main{
         grid-template-areas: 
         "container"
         "article"
@@ -357,27 +386,32 @@ footer{
         "kontakt"
         "footer";
         grid-template-columns: 100%;
+        font-size:14px;
     }
-    #container{
+    header{
         background-size: 1200px;
         height:100%;
         background-position-y: -70px;
         grid-template-columns: 100%;
         grid-template-areas: "nav";
     }
+    #logo{
+        text-align:center;
+        right:0px;
+        width:100%;
+        height:auto;
+    }
     #logo img{
-        height:150px;
+        height:100px;
         filter: brightness(600%);
-        top:15px;
-        right:15px;
-    } 
+    }
     nav{
         padding:150px 0 50px 0;
     }
     #obraz{
         display:none;
     }
-    article{
+    #nordicspa{
         padding:20px 40px;
     }
 
@@ -425,15 +459,15 @@ footer{
         font-size:3em;
     }
 
-    #ritual{
+    #rytual{
         flex-wrap: wrap;
     }
-    #ritual img{
+    #rytual img{
         width:100%;
         margin:0;
         padding:20px 10px;
     }
-    #ritual ul{
+    #rytual ul{
         margin:20px 10px;
         font-size:1.4em;
     }
@@ -466,7 +500,10 @@ footer{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width:1199px) {
-    #container{
+    main{
+        font-size:14px;
+    }
+    header{
         height:100%;
         background-size:1200px;
         grid-template-columns: 50% 50%;
@@ -485,13 +522,13 @@ footer{
         padding:15px;
         margin:15px;  
     }
-    article{
+    #nordicspa{
         padding:50px;
     }
     #gallery{
         padding:100px;
     }
-    #ritual img{
+    #rytual img{
         width:80%;
     }
     #kontakt{
@@ -501,7 +538,7 @@ footer{
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) and (max-width:1199px) {
-    body{
+    main{
         grid-template-areas: 
     "container container"
     "obraz     article"
@@ -510,13 +547,14 @@ footer{
     "cennik    kontakt"
     "footer    footer";
     grid-template-columns: 50% 50%;
+    font-size:14px;
     }
     #obraz{
         display:block;
         padding:25px 0 25px 50px;
     }
-    #ritual img{
-        width:50%;
+    #rytual img{
+        min-width:50%;
     }
     #kontakt{
         padding:20px;
@@ -524,11 +562,17 @@ footer{
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) and (max-width:1550px) {
-    #container{
-        background-image:url(srodek3.jpg);
+ @media only screen and (min-width: 1200px)/* and (max-width:1550px)*/ { 
+    main{
+        font-size:15px;
+        max-width:1400px;
+        margin:0 auto;
+    }
+    header{
         width:100%;
         height:100%;
+        position:relative;
+        
     }
     nav{
         display: flex;
@@ -540,12 +584,13 @@ footer{
         padding:90px 0;
     }
     #gallery{
-        padding:70px;
+        padding:100px;
     }
-    #ritual img{
-        margin:100px 0;
-        width:50%;    
+    #rytual img{
+        margin:50px 0;
+        min-width:50%;    
     }
+    
     .info .name{
         top:0;
         right:0;
@@ -556,3 +601,13 @@ footer{
         font-size:1.2em;
     }
 }
+/* @media only screen and (min-width:1551px){
+    main{
+        max-width:1400px;
+        margin:0 auto;
+    }
+    header{
+        position:relative;
+    }
+} */
+

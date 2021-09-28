@@ -55,16 +55,74 @@ nav a:hover{
 #cennik{
     background-color: #eeccbe;
     color:#5d7c84;
-    font-size: 2em;
+    font-size: 1.4em;
+    padding: 50px;
+    grid-area:cennik;
+    padding-bottom: 70px;
+}
+#cennik h1{
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3px solid #5d7c84;
 }
 #cennik table{
     border:3px solid #5d7c84;
-
+    margin:0 auto;
 }
 #cennik td{
     border-bottom:3px dotted #5d7c84;
     border-right:3px dotted #5d7c84;
     padding:20px;
+}
+#kontakt{
+    background-color:#5d7c84;
+    color:#eeccbe;
+    font-size: 1.4em;
+    padding: 50px;
+    padding-bottom: 70px;
+    grid-area:kontakt;
+    display:grid;
+    grid-template-areas: 
+    "h1     h1"
+    "table  icons";
+}
+#kontakt h1{
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 3px solid #eeccbe;
+    grid-area: h1;
+}
+#kontakt table{
+    grid-area: table;
+}
+#kontakt a{
+    text-decoration: none;
+    color:#eeccbe;
+}
+#kontakt td{
+    border-bottom:3px dotted #eeccbe;
+    padding:20px;
+}
+
+#icons{
+    grid-area:icons;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 2em;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+}
+  
+.fa:hover {
+    opacity: 0.7;
 }
 /*
 #rezerwacja{
@@ -104,12 +162,12 @@ nav a:hover{
         <table>
             <tr>
                 <td>90 min</td>
-                <td>PN-CZW do 17:00</td>
+                <td>PN-CZW do 16:00</td>
                 <td>49zł</td>
             </tr>
             <tr>
                 <td>90 min</td>
-                <td>PN-CZW po 17:00</td>
+                <td>PN-CZW po 16:00</td>
                 <td>69zł</td>
             </tr>
             <tr>
@@ -119,8 +177,27 @@ nav a:hover{
             </tr>
         </table>
     </div>
-    <div id="kontakt">
 
+    <div id="kontakt">
+        <h1>kontakt</h1>
+        <table>
+            <tr>
+                <td><a href="https://goo.gl/maps/i6kNiPWRup4uC1mX6" target="_blank">Adres: </a></td>
+                <td><a href="https://goo.gl/maps/i6kNiPWRup4uC1mX6" target="_blank">Cholerzyn 361, 32-060, Kraków</a></td>
+            </tr>
+            <tr>
+                <td><a href="mailto:info@nordicspakrakow.pl" target="_blank">Napisz:</a></td>
+                <td><a href="mailto:info@nordicspakrakow.pl" target="_blank">info@nordicspakrakow.pl</a></td>
+            </tr>
+            <tr>
+                <td><a href="tel:+48531082338" target="_blank">Zadzwoń: </a></td>
+                <td><a href="tel:+48531082338" target="_blank">+48531082338</a></td>
+            </tr>
+        </table>
+        <div id="icons">
+            <a href="https://www.instagram.com/nordicspakrakow/" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.facebook.com/NordicSpaKrakow/" target="_blank" class="fa fa-facebook"></a>
+        </div>
     </div>
 </body>
 </html>
