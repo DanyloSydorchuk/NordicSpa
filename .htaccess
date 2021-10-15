@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{SERVER_PORT} !^443$ [OR]
+RewriteCond %{HTTP_HOST} !^nordicspakrakow\.pl$ [NC] 
+RewriteRule ^(.*)$ https://nordicspakrakow\.pl/$1 [R=301,L]
+
+AddOutputFilterByType DEFLATE text/plain 
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+
+Modpagespeed Off

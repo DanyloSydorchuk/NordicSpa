@@ -12,7 +12,7 @@ main{
     "obraz     article"
     "gallery   gallery"
     "rytual    rytual"
-    "cennik    kontakt"
+    "cennik    cennik"
     "footer    footer";
     grid-template-columns: 50% 50%;
 }
@@ -97,6 +97,10 @@ nav a:hover{
     width:100%;
     float:left;
 }
+#i3 a{
+    color: #422e28;
+    text-decoration: none;
+}
 .info{
     background-color:#d9dee0;
     font-size: 1.4em;
@@ -134,87 +138,44 @@ nav a:hover{
     font-size:1.3em;
     color:#5d7c84;
     line-height: 150%;
-    font-weight: 600;
+    font-weight: bolder;
 
 }
 
 
 #cennik{
-    background-color: #eeccbe;
-    color:#5d7c84;
+    color:#d9dee0;
     font-size: 1.4em;
-    padding: 50px;
+    padding: 100px;
+    background-image: url(sauna.jpg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: 100%;
     grid-area:cennik;
-    padding-bottom: 70px;
+}
+#c1{
+    background-color:rgba(0, 0, 0, 0.8);
+    max-width:40%;
+    padding:20px 50px 50px 50px;
 }
 #cennik h1{
     text-transform: uppercase;
     text-align: center;
-    border-bottom: 3px solid #5d7c84;
+    border-bottom: 2px solid #d9dee0;
+    
 }
 #cennik table{
-    border:3px solid #5d7c84;
-    margin:0 auto;
+    margin:0 auto; 
 }
 #cennik td{
-    border-bottom:3px dotted #5d7c84;
-    border-right:3px dotted #5d7c84;
-    padding:20px;
-}
-#kontakt{
-    background-color:#5d7c84;
-    color:#eeccbe;
-    font-size: 1.4em;
-    padding: 50px;
-    padding-bottom: 70px;
-    grid-area:kontakt;
-    display:grid;
-    grid-template-areas: 
-    "h1     h1"
-    "table  icons";
-}
-#kontakt h1{
-    text-transform: uppercase;
-    text-align: center;
-    border-bottom: 3px solid #eeccbe;
-    grid-area: h1;
-}
-#kontakt table{
-    grid-area: table;
-}
-#kontakt a{
-    text-decoration: none;
-    color:#eeccbe;
-}
-#kontakt td{
-    border-bottom:3px dotted #eeccbe;
+    border-bottom:2px solid #d9dee0;
     padding:20px;
 }
 
-#icons{
-    grid-area:icons;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    font-size: 2em;
-}
 
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    margin: 0 auto;
-}
-  
-.fa:hover {
-    opacity: 0.7;
-}
-#i3 a{
-    color: #422e28;
-    text-decoration: none;
-}
+
+
+
 
 #reservation_button{
     font-size:1em;
@@ -242,6 +203,38 @@ footer{
     grid-area: footer;
     text-align: center;
     color:#5d7c84;
+    display:grid;
+    grid-template-columns:1fr 1fr 0.6fr 0.7fr 1fr;
+    font-size:14px;
+}
+ footer div{
+    width:auto;
+    text-align: left;
+    margin:5px;
+}
+footer img{
+    width:80%;
+}
+footer h1{
+    text-transform: uppercase;
+    font-size:1.3em;
+}
+footer p{
+    line-height: 60%;
+}
+footer a{
+    text-decoration: none;
+    color:#5d7c84;
+}
+#f1{
+    margin:10px;
+}
+#f6{
+    text-align:center;
+}
+
+.font{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 @media only screen and (max-width:409px) {
@@ -259,7 +252,6 @@ footer{
         "gallery"
         "rytual"
         "cennik"
-        "kontakt"
         "footer";
         grid-template-columns: 100%;
         font-size:13px;
@@ -349,31 +341,66 @@ footer{
     }
     #cennik{
         font-size:1.2em;
-        padding:10px;
+        padding:0px;
+        background-size: 600px;
+        background-position-x: center;
     }
-    #kontakt{
-        font-size:1.2em;
-        grid-template-areas:
-        "h1"
-        "table"
-        "icons";
-        padding:10px;
+    #cennik td{
+        padding:15px;
     }
-    #kontakt td{
-        border-bottom:3px dotted #eeccbe;
-        padding:10px 5px;
-    }
-    #icons{
-        flex-direction: row;
-        justify-content: space-around;
-        font-size: 2em;
-        padding:0 20%;
+    #c1{
+        max-width:100%;
+        padding:10px 25px 25px 25px;
     }
     footer{
-        font-size:0.9em;
+        grid-template-columns:1fr;
+        font-size:1.2em;
+    }
+    footer div{
+        text-align:center;
+    }
+    #f1{
+        display:none;
+    }
+    #f6 p{
+        line-height: 100%;
+    }
+    #partners{
+        margin-top: 40px;
     }
 }
-
+@media only screen and (min-width: 600px) and (max-width:850px){
+    footer{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+    }
+    #f5{
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+    #f1{
+        grid-column-start:1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+    #f3{
+        grid-column-start:2;
+        grid-row-start:3;
+    }
+    #f4{
+        grid-column-start:2;
+        grid-row-start:2;
+    }
+    #partners{
+        margin-top: 40px;
+    }
+    #c1{
+        max-width:60%;
+        margin:0 auto;
+        padding:10px 25px 25px 25px;
+    }
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (max-width:1199px)  {
     main{
@@ -383,7 +410,6 @@ footer{
         "gallery"
         "rytual"
         "cennik"
-        "kontakt"
         "footer";
         grid-template-columns: 100%;
         font-size:14px;
@@ -473,29 +499,16 @@ footer{
     }
     #cennik{
         font-size:1.2em;
-        padding:20px;
-    }
-    #kontakt{
-        font-size:1.2em;
-        grid-template-areas:
-        "h1"
-        "table"
-        "icons";
-        padding:20px;
-    }
-    #kontakt td{
-        border-bottom:3px dotted #eeccbe;
-        padding:10px;
-    }
-    #icons{
-        flex-direction: row;
-        justify-content: space-around;
-        font-size: 2em;
-        padding:0 20%;
+        padding:0;
     }
     footer{
         font-size:0.9em;
     }
+    #f6{
+        grid-column-start: 1;
+        grid-column-end:6;
+    }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -531,8 +544,8 @@ footer{
     #rytual img{
         width:80%;
     }
-    #kontakt{
-        padding:20px 100px;
+    #cennik{
+        padding:50px;
     }
 }
 
@@ -544,7 +557,7 @@ footer{
     "obraz     article"
     "gallery   gallery"
     "rytual    rytual"
-    "cennik    kontakt"
+    "cennik    cennik"
     "footer    footer";
     grid-template-columns: 50% 50%;
     font-size:14px;
@@ -555,9 +568,6 @@ footer{
     }
     #rytual img{
         min-width:50%;
-    }
-    #kontakt{
-        padding:20px;
     }
 }
 
@@ -597,17 +607,16 @@ footer{
         margin:3px;
         font-size:3em;
     }
-    #kontakt,#cennik{
+    #cennik{
         font-size:1.2em;
     }
+    footer{
+        font-size:14px;
+    }
+    #f6{
+        grid-column-start: 1;
+        grid-column-end:6;
+    }
 }
-/* @media only screen and (min-width:1551px){
-    main{
-        max-width:1400px;
-        margin:0 auto;
-    }
-    header{
-        position:relative;
-    }
-} */
+
 
