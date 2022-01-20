@@ -9,15 +9,22 @@ main{
     display: grid;
     grid-template-areas: 
     "container container"
+    "slider    slider"
     "obraz     article"
     "gallery   gallery"
+    /* "slider    slider" */
     "rytual    rytual"
     "cennik    cennik"
     "footer    footer";
     grid-template-columns: 50% 50%;
 }
+
+.uppercase{
+    text-transform: uppercase;
+}
+
 header{
-    background-image:url(saunainside.jpg);
+    background-image:url(img/saunainside.jpg);
     width:100%;
     height:1000px;
     background-size: 100%;
@@ -45,7 +52,7 @@ nav{
     align-items: center;
     grid-area:nav;
     background-color: rgba(0, 0, 0, 0.7);
-    padding:200px 0;
+    /* padding:200px 0; */
 }
 nav a{
     font-size: 1.3em;
@@ -60,6 +67,7 @@ nav a{
 }
 nav a:hover{
     background-color:rgba(161, 111, 90, 0.8);
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.25), 0 14px 20px 0 rgba(0, 0, 0, 0.22);
 }
 
 
@@ -97,9 +105,13 @@ nav a:hover{
     width:100%;
     float:left;
 }
+#gallery source{
+    width:100%;
+}
 #i3 a{
     color: #422e28;
-    text-decoration: none;
+    text-decoration: underline;
+
 }
 .info{
     background-color:#d9dee0;
@@ -123,14 +135,80 @@ nav a:hover{
 }
 
 
+#slider {
+    position: relative;
+    width: 750px;
+    height: 500px;
+    margin: 50px auto;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    grid-area:slider;
+    background-color:rgba(0, 0, 0, 0.5);
+  }
+  #slider ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+  }
+  #slider p{
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    position:absolute;
+    width:100%;
+    height:50px;
+    margin:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  #slider ul li {
+    position: relative;
+    height: 100%;
+    float: left;
+  }
+  #slider ul li img{
+    width: 750px;
+    height: 500px;
+  }
+  #slider #prev, #slider #next {
+    width: 40px;
+    height:40px;
+    font-size:15px;
+    text-align: center;
+    color: white;
+    font-weight:600;
+    background: none;
+    text-decoration: none;
+    border:0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 150ms ease;
+  }
+  #slider #prev:hover, #slider #next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 0;
+  }
+  #slider #next {
+    right: 0px;
+  }
+
+
 #rytual{
     grid-area: rytual;
     display:flex;
     justify-content: space-around;
 }
+#rytual picture{
+    width:50%;
+}
 #rytual img{
-    width:40%;
-    margin:100px;
+    width:100%;
 }
 #rytual ul{
     margin:20px;
@@ -147,7 +225,7 @@ nav a:hover{
     color:#d9dee0;
     font-size: 1.4em;
     padding: 100px;
-    background-image: url(sauna.jpg);
+    background-image: url(img/jacuzzi_kryspinow.jpg);
     background-repeat: no-repeat;
     background-position-y: center;
     background-size: 100%;
@@ -170,22 +248,99 @@ nav a:hover{
 #cennik td{
     border-bottom:2px solid #d9dee0;
     padding:20px;
+    /* position: absolute; */
+    position: relative;
+}
+.promo{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* position: absolute; */
+}
+.price{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+	text-decoration-color: rgb(179, 0, 0);
+}
+#cennik img{
+    height:30px;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+#cennik a{
+    text-decoration: none;
+    color:#d9dee0;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 5% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    max-height:80%;
+    overflow-y: scroll;
+  }
 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: none; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(93, 124, 132, 0.8); 
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(93, 124, 132, 1); ; 
+  }
 
+  .popup img{
+    width:100%;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #5d7c84;
+  }
 
 
 
 #reservation_button{
     font-size:1em;
     width:120px;
-    padding:10px 0;
+    padding:15px;
     position:fixed;
-    bottom:10px;
+    top:10px;
     right:10px;
     background-color:rgba(0, 0, 0, 0.7);
-    border:2px solid rgba(161, 111, 90, 0.8);
     text-align: center;
 }
 #reservation_button a{
@@ -194,18 +349,96 @@ nav a:hover{
     text-transform: uppercase;
 }
 #reservation_button:hover{
-    background-color:rgba(161, 111, 90, 0.5); 
+    background-color:rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.25), 0 14px 20px 0 rgba(0, 0, 0, 0.22);
 }
 
+.reservation_button_style{
+    border:2px;
+    border-style: solid;
+    animation-name:gradient;
+    animation-duration:4s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+}
 
+#reservation_button_style:hover{
+    background-color:rgba(0, 0, 0, 1);
+}
+
+@keyframes gradient{
+    0%{
+        border-image:linear-gradient(0deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    5%{
+        border-image:linear-gradient(18deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    10%{
+        border-image:linear-gradient(36deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    15%{
+        border-image:linear-gradient(54deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    20%{
+        border-image:linear-gradient(72deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    25%{
+        border-image:linear-gradient(90deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    30%{
+        border-image:linear-gradient(108deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    35%{
+        border-image:linear-gradient(126deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    40%{
+        border-image:linear-gradient(144deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    45%{
+        border-image:linear-gradient(162deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    50%{
+        border-image:linear-gradient(180deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    55%{
+        border-image:linear-gradient(198deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    60%{
+        border-image:linear-gradient(216deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    65%{
+        border-image:linear-gradient(234deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    70%{
+        border-image:linear-gradient(252deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    75%{
+        border-image:linear-gradient(270deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    80%{
+        border-image:linear-gradient(288deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    85%{
+        border-image:linear-gradient(306deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    90%{
+        border-image:linear-gradient(324deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    95%{
+        border-image:linear-gradient(342deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }
+    100%{
+        border-image:linear-gradient(360deg, hsla(18, 59%, 84%, 1) 0%, hsla(18, 28%, 49%, 1) 100%) 1% round;
+    }  
+}
 
 footer{
     grid-area: footer;
     text-align: center;
     color:#5d7c84;
     display:grid;
-    grid-template-columns:1fr 1fr 0.6fr 0.7fr 1fr;
-    font-size:14px;
+    grid-template-columns:1fr 1.5fr 1fr 1fr 1fr 1fr;
+    font-size:12px;
 }
  footer div{
     width:auto;
@@ -220,18 +453,69 @@ footer h1{
     font-size:1.3em;
 }
 footer p{
-    line-height: 60%;
+    line-height: 80%;
 }
 footer a{
     text-decoration: none;
     color:#5d7c84;
 }
+footer a:hover{
+    text-shadow: 0 0 2px #5d7c84;
+}
 #f1{
     margin:10px;
 }
-#f6{
+#f1 img{
+    width:80%;
+}
+#f7{
     text-align:center;
 }
+#f7 img{
+    height:30px;
+    width:auto;
+    margin:0 5px;
+}
+
+#cookies{
+    font-size:12px;
+    display:grid;
+    grid-template-areas: 
+    "cookie   cookie"
+    "agree  agree";
+    background-color:rgba(0, 0, 0, 0.87);
+    color:white;
+    padding:20px 0;
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    text-align: center;
+}
+#cook1{
+    grid-area:cookie;
+    display:block;
+    width:auto;
+    margin:10px 20px;
+}
+#cook1 a{
+    color:white;
+}
+#cook2{
+    grid-area:agree;
+}
+#cookies button{
+    background-color:rgba(0, 0, 0, 0);
+    color:white;
+    border:1px solid white;
+    width:150px;
+    padding:5px;
+    margin:0 auto;
+}
+#cookies button:hover{
+    background-color:rgba(255,255,255,0.2);
+}
+
 
 .font{
     font-family: 'Courier New', Courier, monospace;
@@ -243,13 +527,81 @@ footer a{
     }
 }
 
+@media only screen and (min-width:200px) and (max-width:400px) {
+    #slider{
+        width:300px;
+        height:200px;
+    }
+    #slider ul li img{
+        width: 300px;
+        height: 200px;
+    }
+    #slider p{
+        height:30px;
+        line-height: 30px;
+        font-size: 10px;
+    }
+    #cennik td{
+        padding:15px 5px;
+    }
+    .popup{
+        width:80%;
+        margin: 70px auto;
+    }
+
+}
+
+@media only screen and (min-width:400px) and (max-width:500px) {
+    #slider{
+        width:390px;
+        height:260px;
+    }
+    #slider ul li img{
+        width: 390px;
+        height: 260px;
+    }
+    #slider p{
+        height:35px;
+        line-height:35px;
+        font-size:11px;
+    }
+    .popup{
+        width:70%;
+        margin: 70px auto;
+    }
+}
+
+@media only screen and (min-width:500px) and (max-width:600px) {
+    #slider{
+        width:480px;
+        height:320px;
+    }
+    #slider ul li img{
+        width: 480px;
+        height: 320px;
+    }
+    #slider p{
+        height:40px;
+        line-height: 40px;
+        font-size: 13px;
+    }
+    .popup{
+        width:70%;
+        margin: 70px auto;
+    }
+}
+
+
+
 /* Extra small devices (phones, 600px and down) */
- @media only screen and (max-width: 600px){ 
+ @media only screen and (max-width: 599px){ 
     main{
         grid-template-areas: 
         "container"
+        "slider"
         "article"
         "gallery"
+        /* "slider" */
         "rytual"
         "cennik"
         "footer";
@@ -327,12 +679,25 @@ footer a{
         font-size:3em;
     }
 
+    /* #slider{
+        width:300px;
+        height:200px;
+    }
+    #slider ul li img{
+        width: 300px;
+        height: 200px;
+    }
+    #slider p{
+        height:30px;
+        line-height: 30px;
+        font-size: 10px;
+    } */
+
     #rytual{
         flex-wrap: wrap;
     }
-    #rytual img{
+    #rytual picture{
         width:100%;
-        margin:0;
         padding:20px 10px;
     }
     #rytual ul{
@@ -344,9 +709,10 @@ footer a{
         padding:0px;
         background-size: 600px;
         background-position-x: center;
+
     }
     #cennik td{
-        padding:15px;
+        padding:15px 5px;
     }
     #c1{
         max-width:100%;
@@ -362,27 +728,24 @@ footer a{
     #f1{
         display:none;
     }
-    #f6 p{
+    #f7 p{
         line-height: 100%;
-    }
-    #partners{
-        margin-top: 40px;
     }
 }
 @media only screen and (min-width: 600px) and (max-width:850px){
     footer{
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-rows: auto auto auto auto auto;
     }
-    #f5{
+    #f6{
         grid-column-start: 3;
         grid-row-start: 1;
-        grid-row-end: 4;
+        grid-row-end: 5;
     }
     #f1{
         grid-column-start:1;
         grid-row-start: 1;
-        grid-row-end: 4;
+        grid-row-end: 5;
     }
     #f3{
         grid-column-start:2;
@@ -392,13 +755,45 @@ footer a{
         grid-column-start:2;
         grid-row-start:2;
     }
-    #partners{
-        margin-top: 40px;
+    #f5{
+        grid-column-start:2;
+        grid-row-start:4;
     }
     #c1{
         max-width:60%;
         margin:0 auto;
         padding:10px 25px 25px 25px;
+    }
+    #f1 img{
+        width:80%;
+    }
+
+    #slider{
+        width:570px;
+        height:380px;
+    }
+    #slider ul li img{
+        width: 570px;
+        height: 380px;
+    }
+    #slider p{
+        height:50px;
+        line-height: 50px;
+        font-size: 13px;
+    }
+    #cennik td{
+        padding:10px;
+    }
+    .popup{
+        width:50%;
+    }
+}
+@media only screen and (min-width: 851px) and (max-width:1199px){
+    #f1 img{
+        width:100%;
+    }
+    #cennik td{
+        padding:15px;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -406,8 +801,10 @@ footer a{
     main{
         grid-template-areas: 
         "container"
+        "slider"
         "article"
         "gallery"
+        /* "slider" */
         "rytual"
         "cennik"
         "footer";
@@ -488,9 +885,8 @@ footer a{
     #rytual{
         flex-wrap: wrap;
     }
-    #rytual img{
+    #rytual picture{
         width:100%;
-        margin:0;
         padding:20px 10px;
     }
     #rytual ul{
@@ -504,10 +900,14 @@ footer a{
     footer{
         font-size:0.9em;
     }
-    #f6{
+    #f7{
         grid-column-start: 1;
-        grid-column-end:6;
+        grid-column-end:7;
     }
+    .popup{
+        width:50%;
+    }
+    
 
 }
 
@@ -541,7 +941,7 @@ footer a{
     #gallery{
         padding:100px;
     }
-    #rytual img{
+    #rytual picture{
         width:80%;
     }
     #cennik{
@@ -554,8 +954,10 @@ footer a{
     main{
         grid-template-areas: 
     "container container"
+    "slider    slider"
     "obraz     article"
     "gallery   gallery"
+    /* "slider    slider" */
     "rytual    rytual"
     "cennik    cennik"
     "footer    footer";
@@ -566,8 +968,19 @@ footer a{
         display:block;
         padding:25px 0 25px 50px;
     }
-    #rytual img{
-        min-width:50%;
+    #rytual picture{
+        width:50%;
+    }
+    #f1 img{
+        width:90%;
+    }
+    
+}
+
+@media only screen and (min-width:1200px) and (max-width:1320px) {
+    nav a{
+        padding:15px;
+        margin:15px; 
     }
 }
 
@@ -596,9 +1009,9 @@ footer a{
     #gallery{
         padding:100px;
     }
-    #rytual img{
+    #rytual picture{
         margin:50px 0;
-        min-width:50%;    
+        width:50%;    
     }
     
     .info .name{
@@ -611,12 +1024,18 @@ footer a{
         font-size:1.2em;
     }
     footer{
-        font-size:14px;
+        font-size:12px;
     }
-    #f6{
+    #f7{
         grid-column-start: 1;
-        grid-column-end:6;
+        grid-column-end:7;
+    }
+   
+}
+@media only screen and (min-width: 1400px){
+    #cookies{
+        max-width:1400px;
+        left:auto;
     }
 }
-
 

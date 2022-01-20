@@ -3,37 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="nordic, spa, nordyckie, odpoczynek, balie, jacuzzi, saunarium, ruskie, banie, Kryspinów">
     <meta name="author" content="Danylo Sydorchuk">
     <meta name="description" content="Nordyckie spa zostało stworzone z myślą o odpoczynku i odprężeniu. Przeznaczone dla osób poszukujących nowych, niebanalnych wrażeń i doznań, osób kochających relaks, szukających miejsca do kontemplacji i wyciszenia.">
     
-    <link rel="shortcut icon" href="logometa2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logometa.png" type="image/x-icon">
     <link rel="stylesheet" href="/style.css">
     
     <title>Nordic Spa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+    <!--Global site tag (gtag.js) - Google Analytics-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3469204-19">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-3469204-19');
+    </script>
+    
 </head>
 <body>
     <main>
         <header>
             <nav>
                 <a href="#nordicspa">O nas</a>
+                <a href="#slider">Galeria</a>
                 <a href="#rytual">Rytuał</a>
                 <a href="#cennik">Cennik</a>
-                <a href="#kontakt">Kontakt</a>
-                <a href="https://booksy.com/pl-pl/94697_nordic-spa-krakow_zdrowie_9992_liszki#ba_s=sh_1" target="_blank">Zarezerwuj</a>
+                <a href="#f2">Kontakt</a>
+                <a href="https://rezerwacje.nordicspakrakow.pl" target="_blank" class="reservation_button_style">Zarezerwuj</a>
             </nav>
             <div id="logo">
-                <img src="logo.png" alt="Logo">
+                <a href="https://nordicspakrakow.pl/">
+                    <picture>
+
+                        <source srcset="img/logo.avif" type="image/avif">
+                    
+                        <source srcset="img/logo.webp" type="image/webp">
+                    
+                        <img src="img/logo.png" alt="Logo">
+                    
+                    </picture>
+                </a>
             </div>
         </header>
         
-        <picture id="obraz">
-            <img src="outside.jpg" alt="Wygląd strefy SPA">
-        </picture>
+        <div id="obraz">
+            <!-- <picture>
+
+                <source srcset="img/outside.avif" type="image/avif">
+            
+                <source srcset="img/outside.webp" type="image/webp">
+            
+                <img src="img/outside.jpg" alt="Wygląd strefy SPA">
+            
+            </picture> -->
+            <!-- <img src="img/img4.JPG" alt=""> -->
+            <picture>
+                <source srcset="img/outside1.avif" type="image/avif">
+                <source srcset="img/outside1.webp" type="image/webp">
+                <img src="img/outside1.jpg" alt="Wygląd strefy SPA">
+            </picture>
+        </div>
+        
         
         <article id="nordicspa">
             <div>
@@ -45,7 +84,12 @@
         
         <div id="gallery">
             <div id="p1">
-                <img src="jacuzzi.jpg" alt="Wygląd jacuzzi">
+                <picture>
+                    <source srcset="img/jacuzzi.avif" type="image/avif">
+                    <source srcset="img/jacuzzi.webp" type="image/webp">
+                    <img src="img/jacuzzi.jpg" alt="Wygląd jacuzzi">
+                </picture>
+                <!-- <img src="img/img2.JPG" alt=""> -->
             </div>
             <div class="info" id="i1">
                 <span class="name">Jacuzzi</span>
@@ -56,10 +100,20 @@
                 <p>Do dyspozycji klientów są także dwie duże, wolnostojące drewniane sauny tzw. ruskie banie, z wielkimi panoramicznymi oknami, każda z nich 10 osobowa. W środku można się wygodnie rozsiąść, lub nawet położyć.</p>
             </div>
             <div id="p2">
-                <img src="saunadoor.jpg" alt="Wejście do sauny">
+                <picture>
+                    <source srcset="img/sauna.avif" type="image/avif">
+                    <source srcset="img/sauna.webp" type="image/webp">
+                    <img src="img/sauna.jpg" alt="Sauna ze środka">
+                </picture>
+                <!-- <img src="img/img3.JPG" alt=""> -->
             </div>
             <div id="p3">
-                <img src="outside.jpg" alt="Wygląd strefy SPA">
+                <picture>
+                    <source srcset="img/outside2.avif" type="image/avif">
+                    <source srcset="img/outside2.webp" type="image/webp">
+                    <img src="img/outside2.jpg" alt="Wygląd strefy SPA">
+                </picture>
+                <!-- <img src="img/img1.jpg" alt=""> -->
             </div>
             <div class="info" id="i3">
                 <span class="name">Teren</span>
@@ -67,8 +121,168 @@
             </div>
         </div>
 
+        <div id="slider">
+            <ul id="slideWrap">
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide1.avif" type="image/avif">
+                            <source srcset="img/slide1.webp" type="image/webp">
+                            <img src="img/slide1.jpg" alt="Recepcja/strefa gastronomiczna">
+                        </picture>
+                        <p>Recepcja/strefa gastronomiczna</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide2.avif" type="image/avif">
+                            <source srcset="img/slide2.webp" type="image/webp">
+                            <img src="img/slide2.jpg" alt="Balia z gorącą wodą i jacuzzi">
+                        </picture>
+                        <p>Balia z gorącą wodą i jacuzzi</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide3.avif" type="image/avif">
+                            <source srcset="img/slide3.webp" type="image/webp">
+                            <img src="img/slide3.jpg" alt="Zalew Kryspinów z wodą o pierwszej klasie czystości">
+                        </picture>
+                        <p>Zalew Kryspinów z wodą o pierwszej klasie czystości</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide4.avif" type="image/avif">
+                            <source srcset="img/slide4.webp" type="image/webp">
+                            <img src="img/slide4.jpg" alt="Sauna z panoramiczną szybą">
+                        </picture>
+                        <p>Sauna z panoramiczną szybą</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide5.avif" type="image/avif">
+                            <source srcset="img/slide5.webp" type="image/webp">
+                            <img src="img/slide5.jpg" alt="10-cio osobowe sauny">
+                        </picture>
+                        <p>10-cio osobowe sauny</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide6.avif" type="image/avif">
+                            <source srcset="img/slide6.webp" type="image/webp">
+                            <img src="img/slide6.jpg" alt="Widok na zalew">
+                        </picture>
+                        <p>Widok na zalew</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide7.avif" type="image/avif">
+                            <source srcset="img/slide7.webp" type="image/webp">
+                            <img src="img/slide7.jpg" alt="Strefa bez obuwia">
+                        </picture>
+                        <p>Strefa bez obuwia</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <picture>
+                            <source srcset="img/slide9.avif" type="image/avif">
+                            <source srcset="img/slide9.webp" type="image/webp">
+                            <img src="img/slide9.jpg" alt="Strefa bez obuwia">
+                        </picture>
+                        <p>Sauna z szybą panaromiczną</p>
+                    </div>
+                </li>
+              </ul>
+              <button id="prev">&#8810;</button>
+              <button id="next">&#8811;</button>
+        </div>
+
+        <script>
+            var responsiveSlider = function() {
+    
+            var slider = document.getElementById("slider");
+            var slideList = document.getElementById("slideWrap");
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            
+            var count = 1;
+            var sliderWidth = slider.offsetWidth;
+            var items = slideList.querySelectorAll("li").length;
+            
+            
+            window.addEventListener('resize', function() {
+            sliderWidth = slider.offsetWidth;
+            });
+            
+            
+            var nextSlide = function() {
+            if(count < items) {
+                slideList.style.left = "-" + count * sliderWidth + "px";
+                count++;
+            }
+            else if(count = items) {
+                slideList.style.left = "0px";
+                count = 1;
+            }
+            };
+            
+            
+            var prevSlide = function() {
+            if(count > 1) {
+                count = count - 2;
+                slideList.style.left = "-" + count * sliderWidth + "px";
+                count++;
+            }
+            else if(count = 1) {
+                count = items - 1;
+                slideList.style.left = "-" + count * sliderWidth + "px";
+                count++;
+            }
+            };
+            
+            
+            next.addEventListener("click", function() {
+            nextSlide();
+            });
+            
+            prev.addEventListener("click", function() {
+            prevSlide();
+            });
+            
+            
+            setInterval(function() {
+            nextSlide()
+            }, 5000);
+            
+            };
+            
+            
+            window.onload = function() {
+            responsiveSlider();
+    }
+        </script>
+
         <div id="rytual">
-            <img src="ritual.png" alt="Rytuał">
+            <picture>
+
+                <source srcset="img/ritual.avif" type="image/avif">
+            
+                <source srcset="img/ritual.webp" type="image/webp">
+            
+                <img src="img/ritual.png" alt="Rytuał">
+            
+            </picture>
             <ul>
                 <li>Niweluje zmęczenie</li>
                 <li>Usprawnia układ krążenia i oddechowy</li>
@@ -85,34 +299,88 @@
             <div id="c1">
                 <h1>cennik</h1>
                 <table>
-                    <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"></span>
-                    <tr>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90</span> min</td>
-                        <td>PN-PT do <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">16:00</span></td>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">49</span>zł/os.</td>
+                    <!-- <tr>
+                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90 min</span></td>
+                        <td><span class="uppercase">babskie środy</span> od <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">16:00</span></td>
+                        <td>
+                            <a href="https://rezerwacje.nordicspakrakow.pl" target="_blank">
+                                <span class="price">69zł/os.</span>
+                                <span class="promo">49zł/os.</span>
+                                <span class="uppercase" style="font-size:11px">promocja</span>
+                                <img src="img/metka.png" alt="Zarezerwuj" id="cennik_rezerwacja">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr> -->
+                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90 min</span></td>
+                        <td><span class="uppercase">wt-pt</span> od <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">16:00</span></td>
+                        <td>
+                            <a href="https://rezerwacje.nordicspakrakow.pl" target="_blank">
+                                <span class="price">69zł/os.</span>
+                                <span class="promo">59zł/os.</span>
+                                <span class="uppercase" style="font-size:11px">promocja</span>
+                                <img src="img/metka.png" alt="Zarezerwuj" id="cennik_rezerwacja">
+                            </a>
+                        </td>
                     </tr>
                     <tr>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90</span> min</td>
-                        <td>PN-PT po <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">16:00</span></td>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">69</span>zł/os.</td>
+                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90 min</span></td>
+                        <td><span class="uppercase">sb-ndz</span> od <span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">14:00</span></td>
+                        <td>
+                            <a href="https://rezerwacje.nordicspakrakow.pl" target="_blank">
+                                <span class="price">89zł/os.</span>
+                                <span class="promo">79zł/os.</span>
+                                <span class="uppercase" style="font-size:11px">promocja</span>
+                                <img src="img/metka.png" alt="Zarezerwuj" id="cennik_rezerwacja">
+                            </a>
+                        </td>
                     </tr>
                     <tr>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">90</span> min</td>
-                        <td>SB-NDZ</td>
-                        <td><span style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">89</span>zł/os.</td>
+                        <td  colspan="3" style="text-align: center;text-transform: uppercase;">
+                            <a href="#popup">Seanse specjalne</a>
+                        </td>
                     </tr>
                 </table>
+                
+            </div>
+        </div>
+
+        <div id="popup" class="overlay">
+            <div class="popup">
+                <a class="close" href="https://nordicspakrakow.pl/#cennik">&times;</a>
+                <a href="https://rezerwacje.nordicspakrakow.pl/" target="_blank">
+                    <picture>
+                        <source srcset="img/seans11.avif" type="image/avif">
+                        <source srcset="img/seans11.webp" type="image/webp">
+                        <img src="img/seans11.jpg" alt="Seans1">
+                    </picture></a>
+                <a href="https://rezerwacje.nordicspakrakow.pl/" target="_blank">
+                    <picture>
+                        <source srcset="img/seans22.avif" type="image/avif">
+                        <source srcset="img/seans22.webp" type="image/webp">
+                        <img src="img/seans22.jpg" alt="Seans2">
+                    </picture></a>
             </div>
         </div>
 
 
-        <div id="reservation_button">
-            <a href="https://booksy.com/pl-pl/94697_nordic-spa-krakow_zdrowie_9992_liszki#ba_s=sh_1" target="_blank">Zarezerwuj</a>
+        <div id="reservation_button" class="reservation_button_style">
+            <a href="https://rezerwacje.nordicspakrakow.pl" target="_blank">Zarezerwuj</a>
         </div>
 
         <footer>
             <div id="f1">
-                <a href="#logo"><img src="logofooter.png" alt="Logo"></a>
+                <a href="#logo">
+                    <picture>
+
+                        <source srcset="img/logofooter.avif" type="image/avif">
+                    
+                        <source srcset="img/logofooter.webp" type="image/webp">
+                    
+                        <img src="img/logofooter.png" alt="Logo">
+                    
+                    </picture>
+                </a>
             </div>
 
             <div id="f2">
@@ -129,6 +397,7 @@
                 <h1>Nawigacja</h1>
                 <p><a href="#nordicspa">O nas</a></p>
                 <p><a href="NSK-Regulamin.pdf" target="_blank">Regulamin</a></p>
+                <p><a href="polityka_prywatnosci.pdf" target="_blank">Polityka prywatności</a></p>
                 <p><a href="#cennik">Cennik</a></p>
                 <p><a href="FAQ.pdf" target="_blank">FAQ</a></p>
                 <p><a href="#logo">Wróć</a></p>
@@ -138,7 +407,9 @@
                 <h1>Media</h1>
                 <p><a href="https://www.instagram.com/nordicspakrakow/" target="_blank">Instagram</a></p>
                 <p><a href="https://www.facebook.com/NordicSpaKrakow/" target="_blank">Facebook</a></p>
-                
+            </div>
+
+            <div id="f5">
                 <h1 id="partners">Partnerzy</h1>
                 <p><a href="http://www.wake-park.pl/" target="_blank">Wakepark Kraków</a></p>
                 <p><a href="https://poza-szlakiem.pl/" target="_blank">Poza-Szlakiem</a></p>
@@ -146,15 +417,27 @@
                 <p><a href="https://jet-surfing.pl/" target="_blank">Jet Surfing Polska</a></p>
             </div>
 
-            <div id="f5">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10248.035248850665!2d19.79335370646375!3d50.0486662212968!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165fa66a5556ff%3A0x3bfc0b1efc6a3fc3!2sNORDIC%20SPA%20KRAK%C3%93W!5e0!3m2!1sru!2spl!4v1634285234409!5m2!1sru!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div id="f6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d20493.036593994733!2d19.8028259!3d50.0557701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165fa66a5556ff%3A0x3bfc0b1efc6a3fc3!2sNORDIC%20SPA%20KRAK%C3%93W!5e0!3m2!1spl!2spl!4v1634733848807!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
             </div>
 
-            <div id="f6">
-                <p>© 2021 nordicspakrakow.pl Wszelkie prawa zastrzeżone.</p>
+            <div id="f7">
+                <img src="img/dotpay.png" alt="Dotpay"><img src="img/mastercard_visa.png" alt="Mastercard, Visa"><p>© 2021 nordicspakrakow.pl Wszelkie prawa zastrzeżone.</p>
             </div>
         </footer>
 
+        <script>
+            function agree(){
+                document.getElementById("cookies").style="display:none";
+            }
+        </script>
+
+        <div id="cookies">
+            <p id="cook1">Strona wykorzystuje <a href="polityka_prywatnosci.pdf" target="_blank">pliki cookies</a>. Zaakceptuj je, by móc w pełni korzystać z witryny.</p>
+            <button id="cook2" onclick="agree()">Zgadzam się</button>
+        </div>
+        
     </main>   
 </body>
 </html>
+

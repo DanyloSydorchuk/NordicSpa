@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <style>
+    html{
+        width:1000px;
+        margin: 0 auto;
+    }
     #container{
     background-image:url(srodek3.jpg);
     width:100%;
@@ -124,6 +128,63 @@ nav a:hover{
 .fa:hover {
     opacity: 0.7;
 }
+
+#reservation_button{
+    font-size:1em;
+    width:120px;
+    padding:15px;
+    position:fixed;
+    top:10px;
+    right:10px;
+    background-color:rgba(0, 0, 0, 0.7);
+    border:4px;
+    border-style: solid;
+    /* border:2px solid rgba(161, 111, 90, 0.8); */
+    text-align: center;
+    animation-name:gradient;
+    animation-duration:2s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+    animation-direction: alternate;
+}
+
+@keyframes gradient{
+    0%{
+        border-image:linear-gradient(0deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%) 1% round;
+        color:linear-gradient(0deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+    }
+    
+    
+  
+    100%{
+        border-image:linear-gradient(180deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%) 1% round;
+    }  
+}
+
+#reservation_button a{
+    text-decoration: none;
+    color:#d9dee0;
+    text-transform: uppercase;
+}
+
+
+
+#reservation_button:hover{
+    animation-name:scale;
+    animation-duration:0.4s;
+    animation-iteration-count: 2;
+    animation-timing-function:linear;
+    animation-direction: alternate;
+}
+
+@keyframes scale{
+    from{
+        transform: scale(100%);
+    }
+    to{
+        transform: scale(105%);
+    }
+}
 /*
 #rezerwacja{
     display:flex;
@@ -140,7 +201,183 @@ nav a:hover{
     display:block;
     text-transform: uppercase;
 } */
+/* article{
+    height:600px;
+    background-color: #5d7c84;
+    padding:30px;
+    position: relative;
+    width: auto;
+    margin-right: auto;
+  margin-left: auto;
+
+}
+#gallery{
+    margin:10px;
+    left: 0;
+    width:800px;
+    background-color: #d9dee0;
+    overflow-x: hidden;
+    align-items: center;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    position: absolute;
+    
+}
+
+#gallery div{
+    float:left;
+    height:500px;
+    background-color: cyan;
+    margin:10px;
+    
+    
+    
+}
+#gallery img{
+    height:100%;
+}
+
+
+
+/* #gallery:hover {
+  animation-play-state: running;
+} */
+
+/* @keyframes move {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left:-1000px;
+  }
+}
+
+hidden {
+  display: none;
+}
+.slider {
+  position: relative;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  width: auto;
+  height: 700px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  display:flex;
+  flex-direction: row;
+}
+.slider__list {
+  position: absolute;
+  left: 0;
+  width: 162.5rem;
+}
+.slider__slide {
+  float: left;
+}
+.slider img{
+    height:600px;
+    margin-right: 30px;
+    
+}
+.slider li{
+    list-style: none;
+}
+
+.slider__list {
+  -webkit-animation-name: autoplay;
+  animation-name: autoplay;
+  
+  
+  animation-duration: 10s;
+
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes 
+autoplay {   
+  0% {
+ left: 0;
+}
+
+
+  100% {
+ left: -121.875rem;
+}
+} */ 
+
+#slider {
+  position: relative;
+  width: 500px;
+  height: 290px;
+  margin: 100px auto;
+  overflow: hidden;
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+#slider ul {
+  position: relative;
+  list-style: none;
+  height: 100%;
+  width: 10000%;
+  padding: 0;
+  margin: 0;
+
+  transition: all 750ms ease;
+  left: 0;
+}
+#slider ul li {
+  position: relative;
+  height: 100%;
+  float: left;
+}
+#slider ul li img{
+  width: 500px;
+  height: auto;
+
+}
+#slider #prev, #slider #next {
+  width: 40px;
+  line-height: 40px;
+  font-size: 1.5rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  color: black;
+  background: #f9f7fb;
+  text-decoration: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 150ms ease;
+}
+#slider #prev:hover, #slider #next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0;
+	color: white;
+}
+
+#slider #next {
+  right: 0px;
+}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
     <div id="container">
         <nav>
@@ -178,6 +415,14 @@ nav a:hover{
         </table>
     </div>
 
+    <div style="width:300px;height:300px;background: linear-gradient(90deg, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);">
+
+    </div>
+
+    <div id="reservation_button">
+        <a href="https://booksy.com/pl-pl/94697_nordic-spa-krakow_zdrowie_9992_liszki#ba_s=sh_1" target="_blank">Zarezerwuj</a>
+    </div>
+
     <div id="kontakt">
         <h1>kontakt</h1>
         <table>
@@ -199,5 +444,121 @@ nav a:hover{
             <a href="https://www.facebook.com/NordicSpaKrakow/" target="_blank" class="fa fa-facebook"></a>
         </div>
     </div>
+
+    <!-- <article>
+        <div id="gallery" onclick="stop()" ondblclick="play()">
+            <div></div>
+            <div><img src="img/jacuzzi.jpg" alt="das"></div>
+            <div><img src="img/outside.jpg" alt="sdas"></div>
+            <div><img src="img/ritual.png" alt="dsa"></div>
+            <div><img src="img/sauna.jpg" alt="dasdas"></div>
+            <div><img src="img/saunadoor.jpg" alt="dasdas"></div>
+            <div><img src="img/jacuzzi.jpg" alt="dasdas"></div>
+            <div><img src="img/outside.jpg" alt="dasads"></div>
+            <div><img src="img/ritual.png" alt="dasdsa"></div>
+        </div>
+    </article>
+
+   
+    <div class="slider">
+        <ul class="slider__list">
+          <li class="slider__slide"><img src="img/jacuzzi.jpg" alt="Slide image number 1 with plane" /></li>
+          <li class="slider__slide"><img src="img/outside.jpg" alt="Slide image number 2 with Golden Gate Bridge" /></li>
+          <li class="slider__slide"><img src="img/sauna.jpg" alt="Slide image number 3 with Flatiron Building in New York" /></li>
+          <li class="slider__slide"><img src="img/saunadoor.jpg" alt="Slide image number 4 with mountain climber" /></li>
+        </ul>
+      </div>
+      
+
+
+
+    <script>
+        function scrolling(){
+            document.getElementById("gallery").style="overflow-x: scroll";
+        }
+        function stop(){
+            document.getElementById("gallery").style="animation-play-state: paused;";
+        }
+        function play(){
+            document.getElementById("gallery").style="animation-play-state: running;";
+        }
+    </script> -->
+
+
+    <div id="slider">
+        <ul id="slideWrap">
+            <li><img src="img/jacuzzi.JPG" alt=""></li>
+            <li><img src="img/outside.jpg" alt=""></li>
+            <li><img src="img/sauna.jpg" alt=""></li>
+            <li><img src="img/saunadoor.jpg" alt=""></li>
+            <li><img src="img/saunainside.jpg" alt=""></li>
+          </ul>
+          <button id="prev">&#8810;</button>
+          <button id="next">&#8811;</button>
+    </div>
+    <script>
+        var responsiveSlider = function() {
+
+var slider = document.getElementById("slider");
+var slideList = document.getElementById("slideWrap");
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+
+var count = 1;
+var sliderWidth = slider.offsetWidth;
+var items = slideList.querySelectorAll("li").length;
+
+
+window.addEventListener('resize', function() {
+  sliderWidth = slider.offsetWidth;
+});
+
+
+var nextSlide = function() {
+  if(count < items) {
+    slideList.style.left = "-" + count * sliderWidth + "px";
+    count++;
+  }
+  else if(count = items) {
+    slideList.style.left = "0px";
+    count = 1;
+  }
+};
+
+
+var prevSlide = function() {
+  if(count > 1) {
+    count = count - 2;
+    slideList.style.left = "-" + count * sliderWidth + "px";
+    count++;
+  }
+  else if(count = 1) {
+    count = items - 1;
+    slideList.style.left = "-" + count * sliderWidth + "px";
+    count++;
+  }
+};
+
+
+next.addEventListener("click", function() {
+  nextSlide();
+});
+
+prev.addEventListener("click", function() {
+  prevSlide();
+});
+
+
+setInterval(function() {
+  nextSlide()
+}, 5000);
+
+};
+
+
+window.onload = function() {
+responsiveSlider();
+}
+    </script>
 </body>
 </html>
